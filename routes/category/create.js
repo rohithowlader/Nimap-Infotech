@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 let createCategory = express.Router();
 
-createCategory.post('/', async (req, res) => {
+createCategory.post('/v1.0/categories/', async (req, res) => {
 
     try {
         let { categoryName } = req.body;
@@ -13,6 +13,10 @@ createCategory.post('/', async (req, res) => {
         
 
 //NimapInfotech
+        if(categoryFind)
+        {
+            return res.status(409).json({ message: `Category ${categoryName} Already Present` });
+        }
         if (!categoryFind) {
 
             
@@ -24,12 +28,10 @@ createCategory.post('/', async (req, res) => {
             })
             const response = await categories.save();
             return res.status(200).json({
-                messsage: `User ${categories.categoryName} Created`
+                messsage: `Category ${categories.categoryName} Created`
             });
         }
-        else {
-            return res.status(409).json({ message: "User Already Present" });
-        }
+        
 
     }
     catch (e) {

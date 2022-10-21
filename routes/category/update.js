@@ -1,13 +1,15 @@
+// import url from 'url';
 import express from "express";
 import category from "../../models/category.js";
 
 let updateCategory = express.Router();
 
-updateCategory.post('/', async (req, res) => {
+updateCategory.put('/v1.0/categories', async (req, res) => {
 
     try {
+        let categoryName=req.query.categoryName;
 
-        let { uuidCategory,categoryName,newCategoryName } = req.body;
+        let { uuidCategory,newCategoryName } = req.body;
         if(!newCategoryName)
         {
             return res.status(404).json({message:"Invalid entry"})

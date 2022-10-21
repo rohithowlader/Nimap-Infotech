@@ -3,7 +3,7 @@ import category from "../../models/category.js";
 
 let deleteCategory = express.Router();
 
-deleteCategory.post('/', async (req, res) => {
+deleteCategory.delete('/v1.0/categories', async (req, res) => {
 
     try {
         let { uuidCategory,categoryName }  = req.body;

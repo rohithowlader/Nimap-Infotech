@@ -14,10 +14,10 @@ app.use(express.json());
 connectUserDB();
 
 //Routing
-app.use('/createCategory', createCategory);
-app.use('/readCategory', readCategory);
-app.use('/deleteCategory', deleteCategory);
-app.use('/updateCategory', updateCategory);
+app.use('/', createCategory);
+app.use('/', readCategory);
+app.use('/v1.0/categories/deleteCategory', deleteCategory);
+app.use('/', updateCategory);
 
 
 //Created an express server

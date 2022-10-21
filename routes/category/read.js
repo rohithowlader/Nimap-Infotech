@@ -3,7 +3,7 @@ import category from "../../models/category.js";
 
 let readCategory = express.Router();
 
-readCategory.post('/', async (req, res) => {
+readCategory.get('/v1.0/categories', async (req, res) => {
 
     try {
 
