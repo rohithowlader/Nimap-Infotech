@@ -5,7 +5,9 @@ import createCategory from './routes/category/create.js';
 import readCategory from './routes/category/read.js';
 import deleteCategory from './routes/category/delete.js';
 import updateCategory from './routes/category/update.js';
-import readWithFilterCategory from './routes/category/readWithFilter.js'
+import readWithFilterCategory from './routes/category/readWithFilter.js';
+
+import createProduct from './routes/product/create.js'
 
 
 //Encoding
@@ -15,12 +17,16 @@ app.use(express.json());
 
 connectUserDB();
 
-//Routing
+// Category Routing
 app.use('/', createCategory);
 app.use('/', readCategory);
 app.use('', deleteCategory);
 app.use('/', updateCategory);
 app.use('/', readWithFilterCategory);
+// Product Routing
+app.use('/',createProduct);
+
+
 
 
 //Created an express server
