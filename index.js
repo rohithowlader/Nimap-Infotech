@@ -5,6 +5,8 @@ import createCategory from './routes/category/create.js';
 import readCategory from './routes/category/read.js';
 import deleteCategory from './routes/category/delete.js';
 import updateCategory from './routes/category/update.js';
+import readWithFilterCategory from './routes/category/readWithFilter.js'
+
 
 //Encoding
 const app = express();
@@ -16,8 +18,9 @@ connectUserDB();
 //Routing
 app.use('/', createCategory);
 app.use('/', readCategory);
-app.use('/v1.0/categories/deleteCategory', deleteCategory);
+app.use('', deleteCategory);
 app.use('/', updateCategory);
+app.use('/', readWithFilterCategory);
 
 
 //Created an express server

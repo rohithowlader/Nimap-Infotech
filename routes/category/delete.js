@@ -6,7 +6,9 @@ let deleteCategory = express.Router();
 deleteCategory.delete('/v1.0/categories', async (req, res) => {
 
     try {
-        let { uuidCategory,categoryName }  = req.body;
+        let {categoryName}=req.query;
+        console.log(req.query);
+        let { uuidCategory}  = req.body;
        
 
         const categoryFind = await category.findOne({$or: [{ uuidCategory: uuidCategory},{categoryName: categoryName } ]});
