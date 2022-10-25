@@ -12,7 +12,7 @@ readWithFilterCategory.post('/v1.0/categories/test', async (req, res) => {
         const totalPosts = await category.countDocuments().exec();
         let startIndex = pageNumber * limit;
         const endIndex = (pageNumber + 1) * limit;
-        result.totalPosts = totalPosts;
+        result.totalCategory = totalPosts;
         if (startIndex > 0) {
             result.previous = {
                 pageNumber: pageNumber - 1,
