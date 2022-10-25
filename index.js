@@ -8,6 +8,7 @@ import updateCategory from './routes/category/update.js';
 import readWithFilterCategory from './routes/category/readWithFilter.js';
 
 import createProduct from './routes/product/create.js'
+import deleteProduct from './routes/product/delete.js'
 
 
 //Encoding
@@ -25,6 +26,7 @@ app.use('/', updateCategory);
 app.use('/', readWithFilterCategory);
 // Product Routing
 app.use('/',createProduct);
+app.use('/',deleteProduct);
 
 
 

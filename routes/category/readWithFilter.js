@@ -3,7 +3,7 @@ import category from "../../models/category.js";
 
 let readWithFilterCategory = express.Router();
 
-readWithFilterCategory.post('/v1.0/categories/test', async (req, res) => {
+readWithFilterCategory.post('/v1.0/categories/filter', async (req, res) => {
 
     try {
         const pageNumber = parseInt(req.query.pageNumber) || 0;

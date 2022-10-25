@@ -7,7 +7,6 @@ deleteCategory.delete('/v1.0/categories', async (req, res) => {
 
     try {
         let {categoryName}=req.query;
-        console.log(req.query);
         let { uuidCategory}  = req.body;
        
 
